@@ -3,6 +3,7 @@ import { computed, ref, toRaw } from 'vue'
 import { readState, writeState } from '../data/database'
 import { emptyState, stateSchema, type LearningState } from '../data/state'
 import { lessons, stages } from '../data/content'
+import { scheduleReview } from '../lib/spacedRepetition'
 import { dateKey } from '../lib/dates'
 import { isCompleted, progressPercent, streakStats } from '../lib/progress'
 export const useLearning = defineStore('learning',()=>{
@@ -43,5 +44,20 @@ export const useLearning = defineStore('learning',()=>{
     state.value.progress[id]!.readAt=new Date().toISOString();fulfill('read');void persist()
   }
   function updateSettings(value:LearningState['settings']) {state.value.settings=value;void persist()}
-  return {state,ready,error,saving,todayKey,today,completed,totalPlanned,percent,streak,nextLesson,init,persist,tick,toggleGoal,fulfill,visit,markRead,updateSettings}
+  function recordAnswer(id:string,correct:boolean) {
+    state.value.wrongQuestions=state.value.wrongQuestions.filter(q=>q!==id)
+    if(!correct) state.value.wrongQuestions.push(id)
+    void persist()
+  }
+  function finishQuiz(id:string,score:number) {
+    state.value.progress[id] ??= {readAt:null,quizAt:null,attempts:0,bestScore:0}
+    const progress=state.value.progress[id]!
+    progress.quizAt=new Date().toISOString();progress.attempts++;progress.bestScore=Math.max(progress.bestScore,score)
+    fulfill('quiz');void persist()
+  }
+  function reviewReading(id:string,remembered:boolean) {
+    state.value.reviews[id]=scheduleReview(state.value.reviews[id],remembered,dateKey())
+    fulfill('review');void persist()
+  }
+  return {recordAnswer,finishQuiz,reviewReading,state,ready,error,saving,todayKey,today,completed,totalPlanned,percent,streak,nextLesson,init,persist,tick,toggleGoal,fulfill,visit,markRead,updateSettings}
 })
