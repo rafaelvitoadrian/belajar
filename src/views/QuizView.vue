@@ -5,7 +5,7 @@ import { useLearning } from '../stores/learning'
 import { useNavigation } from '../stores/navigation'
 import AppIcon from '../components/AppIcon.vue'
 const store=useLearning(),nav=useNavigation()
-const selected=ref(lessons.some(l=>l.id===nav.lessonId)?nav.lessonId:store.nextLesson.id)
+const selected=ref(lessons.some(l=>l.id===store.state.lastLesson)?store.state.lastLesson!:store.nextLesson.id)
 const lesson=computed(()=>lessons.find(l=>l.id===selected.value)!)
 const questions=ref<Question[]>([]),index=ref(0),answer=ref<number|null>(null),correct=ref(0),active=ref(false),finished=ref(false)
 const current=computed(()=>questions.value[index.value])

@@ -12,6 +12,7 @@ export const useLearning = defineStore('learning',()=>{
   const error=ref('')
   const saving=ref(false)
   const todayKey=ref(dateKey())
+  let pendingWrites=0
   let queue:Promise<void> = Promise.resolve()
   async function init() {
     try { const saved = await readState(); if(saved) state.value=stateSchema.parse(saved) }
@@ -19,12 +20,14 @@ export const useLearning = defineStore('learning',()=>{
     finally {ready.value=true}
   }
   function persist() {
-    if(!ready.value || error.value) return queue
+    if(!ready.value || error.value || importing.value) return queue
     const snapshot = structuredClone(toRaw(state.value))
-    saving.value=true
-    queue=queue.then(()=>writeState(snapshot)).catch(()=>{error.value='Perubahan belum tersimpan. Periksa ruang penyimpanan dan izin browser; ekspor data untuk membuat cadangan.'}).finally(()=>{saving.value=false})
+    pendingWrites++;saving.value=true
+    queue=queue.then(()=>writeState(snapshot)).catch(()=>{error.value='Perubahan belum tersimpan. Periksa ruang penyimpanan dan izin browser; ekspor data untuk membuat cadangan.'}).finally(()=>{pendingWrites--;saving.value=pendingWrites>0})
     return queue
   }
+  const importing=ref(false)
+  function refreshDay(){todayKey.value=dateKey()}
   function day() {
     todayKey.value=dateKey()
     return state.value.days[todayKey.value] ??= {seconds:0,goals:[],prayers:[]}
@@ -59,5 +62,15 @@ export const useLearning = defineStore('learning',()=>{
     state.value.reviews[id]=scheduleReview(state.value.reviews[id],remembered,dateKey())
     fulfill('review');void persist()
   }
-  return {recordAnswer,finishQuiz,reviewReading,state,ready,error,saving,todayKey,today,completed,totalPlanned,percent,streak,nextLesson,init,persist,tick,toggleGoal,fulfill,visit,markRead,updateSettings}
+  function toggleFavorite(id:string){state.value.favorites=state.value.favorites.includes(id)?state.value.favorites.filter(x=>x!==id):[...state.value.favorites,id];void persist()}
+  function addQuestion(text:string,lessonId:string|null){state.value.questions.push({id:crypto.randomUUID(),text,lessonId,answer:'',answered:false,createdAt:new Date().toISOString()});void persist()}
+  function toggleQuestion(id:string){const q=state.value.questions.find(q=>q.id===id);if(q)q.answered=!q.answered;void persist()}
+  function saveAnswer(id:string,answer:string){const q=state.value.questions.find(q=>q.id===id);if(q)q.answer=answer;void persist()}
+  function togglePrayer(prayer:LearningState['days'][string]['prayers'][number]){const d=day();d.prayers=d.prayers.includes(prayer)?d.prayers.filter(p=>p!==prayer):[...d.prayers,prayer];void persist()}
+  async function replaceState(value:LearningState){
+    const validated=stateSchema.parse(value)
+    importing.value=true
+    try{await queue;await writeState(validated);state.value=validated;error.value='';refreshDay()}finally{importing.value=false}
+  }
+  return {toggleFavorite,addQuestion,toggleQuestion,saveAnswer,togglePrayer,replaceState,refreshDay,importing,recordAnswer,finishQuiz,reviewReading,state,ready,error,saving,todayKey,today,completed,totalPlanned,percent,streak,nextLesson,init,persist,tick,toggleGoal,fulfill,visit,markRead,updateSettings}
 })

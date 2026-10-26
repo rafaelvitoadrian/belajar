@@ -8,7 +8,7 @@ export const useNavigation = defineStore('navigation', () => {
   function fromHash() {
     const [next, id] = location.hash.slice(1).split('/')
     page.value = pages.includes(next as Page) ? next as Page : 'home'
-    lessonId.value = id || 'syahadat'
+    if(id) lessonId.value = id
   }
   fromHash()
   window.addEventListener('hashchange', fromHash)

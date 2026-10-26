@@ -1,3 +1,5 @@
+import { existsSync } from 'node:fs'
+import { resolve } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import { lessons, loadLessons, parseLesson } from '../src/data/content'
 import sample from '../content/lessons/syahadat.json'
@@ -26,4 +28,10 @@ describe('pemuat konten', () => {
     expect(() => loadLessons({'/a.json':sample}, {})).toThrow()
     expect(() => loadLessons({'/a.json':sample, '/b.json':sample}, {'/a.md':'Isi','/b.md':'Isi'})).toThrow()
   })
+})
+it('menghubungkan setiap bacaan dan materi tersedia ke rencana yang sesuai',async()=>{
+ const {stages,readings}=await import('../src/data/content')
+ expect(stages.flatMap(s=>s.lessonIds)).toHaveLength(18)
+ for(const lesson of lessons)expect(stages.find(s=>s.id===lesson.stageId)?.lessonIds).toContain(lesson.id)
+ for(const reading of readings){expect(lessons.find(l=>l.id===reading.lessonId)?.readingIds).toContain(reading.id);if(reading.audio)expect(existsSync(resolve('.'+reading.audio.path))).toBe(true)}
 })

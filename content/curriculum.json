@@ -7,6 +7,11 @@
       "Mengenal syahadat",
       "Rukun iman",
       "Rukun Islam"
+    ],
+    "lessonIds": [
+      "syahadat",
+      "rukun-iman",
+      "rukun-islam"
     ]
   },
   {
@@ -17,6 +22,11 @@
       "Wudhu",
       "Mandi wajib",
       "Tayamum"
+    ],
+    "lessonIds": [
+      "wudhu",
+      "mandi-wajib",
+      "tayamum"
     ]
   },
   {
@@ -27,6 +37,11 @@
       "Niat dan waktu shalat",
       "Gerakan shalat",
       "Bacaan shalat"
+    ],
+    "lessonIds": [
+      "niat-waktu-shalat",
+      "gerakan-shalat",
+      "bacaan-shalat"
     ]
   },
   {
@@ -37,6 +52,11 @@
       "Huruf hijaiyah",
       "Harakat",
       "Tajwid dasar"
+    ],
+    "lessonIds": [
+      "huruf-hijaiyah",
+      "harakat",
+      "tajwid-dasar"
     ]
   },
   {
@@ -47,6 +67,11 @@
       "Puasa Ramadan",
       "Zakat",
       "Mengenal haji"
+    ],
+    "lessonIds": [
+      "puasa-ramadan",
+      "zakat",
+      "mengenal-haji"
     ]
   },
   {
@@ -57,6 +82,11 @@
       "Memulai dengan Bismillah",
       "Adab sehari-hari",
       "Berbuat baik kepada sesama"
+    ],
+    "lessonIds": [
+      "bismillah",
+      "adab-sehari-hari",
+      "berbuat-baik"
     ]
   }
 ]

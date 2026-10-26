@@ -13,7 +13,7 @@ export function useStudyTimer() {
     document.addEventListener('visibilitychange',flush)
     timer=setInterval(()=>{
       const now=Date.now(),elapsed=Math.min((now-previous)/1000,5); previous=now
-      if (store.ready && !document.hidden && ['lesson','quiz','readings'].includes(nav.page) && now-lastInteraction<120000) {
+      if (store.ready && !store.importing && !document.hidden && ['lesson','quiz','readings'].includes(nav.page) && now-lastInteraction<120000) {
         store.tick(elapsed);unsaved+=elapsed
         if(unsaved>=10){unsaved=0;flush()}
       }
