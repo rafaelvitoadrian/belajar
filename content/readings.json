@@ -1,0 +1,34 @@
+[
+  {
+    "id": "bismillah",
+    "title": "Basmalah",
+    "arabic": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+    "transliteration": "Bismillāhir-raḥmānir-raḥīm",
+    "meaning": "Dengan nama Allah Yang Maha Pengasih, Maha Penyayang.",
+    "review": "perlu-ditinjau",
+    "lessonId": "bismillah",
+    "source": {
+      "title": "Al-Qur’an, Al-Fatihah (1): 1",
+      "url": "https://quran.com/id/al-fatihah/1"
+    },
+    "audio": {
+      "path": "/content/audio/bismillah.mp3",
+      "reciter": "Mishary Rashid Alafasy · Al-Fatihah ayat 1",
+      "sourceUrl": "https://everyayah.com/data/Alafasy_128kbps/001001.mp3"
+    }
+  },
+  {
+    "id": "syahadat",
+    "title": "Dua kalimat syahadat",
+    "arabic": "أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ",
+    "transliteration": "Asyhadu an lā ilāha illallāh, wa asyhadu anna Muḥammadar rasūlullāh.",
+    "meaning": "Aku bersaksi bahwa tidak ada yang berhak disembah selain Allah, dan aku bersaksi bahwa Muhammad adalah utusan Allah.",
+    "review": "perlu-ditinjau",
+    "lessonId": "syahadat",
+    "source": {
+      "title": "Sahih Muslim no. 8a, hadis Jibril",
+      "url": "https://sunnah.com/muslim:8a"
+    },
+    "audio": null
+  }
+]

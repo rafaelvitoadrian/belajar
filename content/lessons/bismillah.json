@@ -1,0 +1,102 @@
+{
+  "id": "bismillah",
+  "title": "Memulai dengan Bismillah",
+  "stageId": 6,
+  "minutes": 5,
+  "summary": "Mengenali basmalah dan menyebut nama Allah sebelum makan.",
+  "review": {
+    "status": "perlu-ditinjau"
+  },
+  "sumber": [
+    {
+      "id": "fatihah-1",
+      "title": "Al-Qur’an, Al-Fatihah (1): 1",
+      "url": "https://quran.com/id/al-fatihah/1",
+      "note": "Terjemahan Indonesia Kementerian Agama melalui Quran.com. Periksa teks pada mushaf resmi bersama guru."
+    },
+    {
+      "id": "bukhari-5376",
+      "title": "Sahih al-Bukhari no. 5376, Kitab Makanan",
+      "url": "https://sunnah.com/bukhari:5376",
+      "narrator": "Umar bin Abi Salamah; diriwayatkan oleh Imam al-Bukhari.",
+      "note": "Anjuran menyebut nama Allah ketika mulai makan."
+    }
+  ],
+  "terms": [
+    {
+      "id": "bismillah",
+      "arabic": "بِسْمِ اللَّهِ",
+      "transliteration": "Bismillāh",
+      "meaning": "Dengan nama Allah.",
+      "sourceIds": [
+        "fatihah-1"
+      ]
+    },
+    {
+      "id": "ar-rahman",
+      "arabic": "الرَّحْمَٰن",
+      "transliteration": "Ar-Raḥmān",
+      "meaning": "Yang Maha Pengasih.",
+      "sourceIds": [
+        "fatihah-1"
+      ]
+    },
+    {
+      "id": "ar-rahim",
+      "arabic": "الرَّحِيم",
+      "transliteration": "Ar-Raḥīm",
+      "meaning": "Yang Maha Penyayang.",
+      "sourceIds": [
+        "fatihah-1"
+      ]
+    }
+  ],
+  "readingIds": [
+    "bismillah"
+  ],
+  "differences": "Ada perbedaan pendapat antar mazhab tentang bacaan basmalah dalam shalat, termasuk pelafalannya dengan suara terdengar atau lirih. Pelajaran ini tidak menetapkan pilihan; tanyakan praktiknya kepada guru.",
+  "quiz": [
+    {
+      "id": "bismillah-1",
+      "prompt": "Apa arti awal bacaan “Bismillāh”?",
+      "options": [
+        "Segala puji bagi Allah",
+        "Dengan nama Allah",
+        "Allah Maha Besar"
+      ],
+      "answer": 1,
+      "explanation": "Bismillāh berarti “Dengan nama Allah”, bagian awal Al-Fatihah ayat 1.",
+      "sourceIds": [
+        "fatihah-1"
+      ]
+    },
+    {
+      "id": "bismillah-2",
+      "prompt": "Dalam hadis Umar bin Abi Salamah, apa arahan Nabi ketika mulai makan?",
+      "options": [
+        "Menyebut nama Allah",
+        "Menghitung semua makanan",
+        "Membaca nama hari"
+      ],
+      "answer": 0,
+      "explanation": "Dalam riwayat al-Bukhari no. 5376, Nabi mengajarkan menyebut nama Allah, makan dengan tangan kanan, dan mengambil yang dekat.",
+      "sourceIds": [
+        "bukhari-5376"
+      ]
+    },
+    {
+      "id": "bismillah-3",
+      "prompt": "Apa arti “Ar-Raḥīm” pada terjemahan ayat ini?",
+      "options": [
+        "Yang Maha Pengasih",
+        "Yang Maha Penyayang",
+        "Pemilik hari pembalasan"
+      ],
+      "answer": 1,
+      "explanation": "Terjemahan Al-Fatihah ayat 1 menyebut Allah Yang Maha Pengasih, Maha Penyayang.",
+      "sourceIds": [
+        "fatihah-1"
+      ]
+    }
+  ]
+}

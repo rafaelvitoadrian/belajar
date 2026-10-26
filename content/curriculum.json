@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "Dasar iman dan Islam",
+    "description": "Syahadat, rukun iman, rukun Islam",
+    "topics": [
+      "Mengenal syahadat",
+      "Rukun iman",
+      "Rukun Islam"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Bersuci",
+    "description": "Wudhu, mandi wajib, tayamum",
+    "topics": [
+      "Wudhu",
+      "Mandi wajib",
+      "Tayamum"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Shalat",
+    "description": "Niat, gerakan, bacaan, waktu shalat",
+    "topics": [
+      "Niat dan waktu shalat",
+      "Gerakan shalat",
+      "Bacaan shalat"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Membaca Al-Qur’an",
+    "description": "Huruf hijaiyah, harakat, tajwid dasar",
+    "topics": [
+      "Huruf hijaiyah",
+      "Harakat",
+      "Tajwid dasar"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Puasa, zakat, dan haji",
+    "description": "Mengenal ibadah-ibadah pokok lainnya",
+    "topics": [
+      "Puasa Ramadan",
+      "Zakat",
+      "Mengenal haji"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Akhlak dan kehidupan sehari-hari",
+    "description": "Adab, keluarga, dan hubungan sesama",
+    "topics": [
+      "Memulai dengan Bismillah",
+      "Adab sehari-hari",
+      "Berbuat baik kepada sesama"
+    ]
+  }
+]

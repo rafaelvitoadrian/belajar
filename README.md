@@ -17,3 +17,5 @@ Buka alamat yang dicetak Vite. Untuk PWA gunakan build produksi di HTTPS atau lo
 ## Tahap pengerjaan
 
 1. Scaffold dan layout: `npm run build`. Periksa header putih, navigasi kiri, area utama dan kolom Hari Ini; pada layar kecil navigasi menjadi drawer. Angka pada commit ini masih dummy.
+
+2. Konten dan jalur belajar: `npm test -- tests/content.test.ts` dan `npm run build`. Buka Jalur belajar, perluas tahap 1 dan 6, buka template Syahadat/Bismillah dan periksa sumber. Topik lain sengaja tidak dapat dibuka karena materinya belum ditulis.

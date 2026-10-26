@@ -1,0 +1,102 @@
+{
+  "id": "syahadat",
+  "title": "Mengenal syahadat",
+  "stageId": 1,
+  "minutes": 7,
+  "summary": "Memahami dua kesaksian yang menjadi dasar seorang Muslim.",
+  "review": {
+    "status": "perlu-ditinjau"
+  },
+  "sumber": [
+    {
+      "id": "bukhari-8",
+      "title": "Sahih al-Bukhari no. 8, Kitab Iman",
+      "url": "https://sunnah.com/bukhari:8",
+      "narrator": "Abdullah bin Umar; diriwayatkan oleh Imam al-Bukhari.",
+      "note": "Dasar dua kesaksian dan lima rukun Islam. Penjelasan aplikasi adalah ringkasan pembelajaran."
+    },
+    {
+      "id": "muslim-8a",
+      "title": "Sahih Muslim no. 8a, hadis Jibril",
+      "url": "https://sunnah.com/muslim:8a",
+      "narrator": "Umar bin al-Khattab, melalui Abdullah bin Umar; diriwayatkan oleh Imam Muslim.",
+      "note": "Penjelasan Islam, iman, dan ihsan. Lafal Arab dalam aplikasi adalah bentuk pembelajaran dan perlu diperiksa guru."
+    }
+  ],
+  "terms": [
+    {
+      "id": "syahadat",
+      "arabic": "شَهَادَة",
+      "transliteration": "Syahadat",
+      "meaning": "Kesaksian; dalam pelajaran ini, kesaksian tentang Allah dan kerasulan Muhammad.",
+      "sourceIds": [
+        "bukhari-8"
+      ]
+    },
+    {
+      "id": "rasul",
+      "arabic": "رَسُول",
+      "transliteration": "Rasul",
+      "meaning": "Utusan; Muhammad disebut sebagai utusan Allah dalam syahadat.",
+      "sourceIds": [
+        "muslim-8a"
+      ]
+    },
+    {
+      "id": "islam",
+      "arabic": "إِسْلَام",
+      "transliteration": "Islam",
+      "meaning": "Dalam hadis Jibril dijelaskan melalui syahadat, shalat, zakat, puasa Ramadan, dan haji bagi yang mampu.",
+      "sourceIds": [
+        "muslim-8a"
+      ]
+    }
+  ],
+  "readingIds": [
+    "syahadat"
+  ],
+  "quiz": [
+    {
+      "id": "syahadat-1",
+      "prompt": "Apa dua hal yang dinyatakan dalam syahadat?",
+      "options": [
+        "Allah satu-satunya yang berhak disembah dan Muhammad utusan Allah",
+        "Nama malaikat dan kitab",
+        "Waktu puasa dan haji"
+      ],
+      "answer": 0,
+      "explanation": "Dua kesaksian ini disebutkan dalam hadis tentang dasar Islam, riwayat al-Bukhari no. 8.",
+      "sourceIds": [
+        "bukhari-8"
+      ]
+    },
+    {
+      "id": "syahadat-2",
+      "prompt": "Dalam hadis al-Bukhari no. 8, Islam dibangun di atas berapa dasar?",
+      "options": [
+        "Tiga",
+        "Lima",
+        "Tujuh"
+      ],
+      "answer": 1,
+      "explanation": "Hadis tersebut menyebut lima dasar: syahadat, shalat, zakat, haji, dan puasa Ramadan.",
+      "sourceIds": [
+        "bukhari-8"
+      ]
+    },
+    {
+      "id": "syahadat-3",
+      "prompt": "Apa makna “rasul” dalam kesaksian tentang Muhammad?",
+      "options": [
+        "Utusan Allah",
+        "Nama sebuah kitab",
+        "Nama suatu tempat"
+      ],
+      "answer": 0,
+      "explanation": "Hadis Jibril menyebut Muhammad sebagai utusan Allah. Mintalah guru membantu memahami dan melatih pelafalannya.",
+      "sourceIds": [
+        "muslim-8a"
+      ]
+    }
+  ]
+}
