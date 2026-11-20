@@ -87,7 +87,7 @@ test('aksesibilitas semua halaman dan tampilan desktop',async({page})=>{
  await page.goto('/')
  await expect(page.getByRole('heading',{name:'Assalamu’alaikum.'})).toBeVisible()
  await page.screenshot({path:'artifacts/beranda-desktop.png',fullPage:true})
- const routes=['home','path','lesson/syahadat','quiz','readings','glossary','notes','settings']
+ const routes=['home','path','lesson/syahadat','quiz','recall','readings','glossary','notes','settings']
  const violations:unknown[]=[]
  for (const route of routes){
   await page.goto('/#'+route)
@@ -117,4 +117,39 @@ test('ponsel memiliki drawer dan tidak meluber horizontal',async({page})=>{
  await expect(page.locator('.drawer-close')).toBeFocused()
  await page.keyboard.press('Escape')
  await expect(page.getByRole('button',{name:'Buka navigasi'})).toHaveAttribute('aria-expanded','false')
+})
+
+test('latihan ingatan mengembalikan kartu sulit di akhir sesi', async ({page}) => {
+  await page.goto('/#recall')
+  const first = await page.locator('main h2').innerText()
+  await page.getByRole('button',{name:'Lihat arti'}).click()
+  await page.getByRole('button',{name:'Ulangi di akhir sesi'}).click()
+  const count = Number((await page.getByText(/kartu tersisa/).innerText()).split(' ')[0])
+  for(let i=1;i<count;i++){
+    await page.getByRole('button',{name:'Lihat arti'}).click()
+    await page.getByRole('button',{name:'Saya ingat'}).click()
+  }
+  await expect(page.locator('main h2')).toHaveText(first)
+  await page.getByRole('button',{name:'Lihat arti'}).click()
+  await page.getByRole('button',{name:'Saya ingat'}).click()
+  await expect(page.getByRole('heading',{name:'Semua kartu sudah diingat'})).toBeVisible()
+})
+
+test('pilihan tahap Beranda membuka tahap yang sama dan modul baru bisa dipelajari', async ({page}) => {
+  await page.goto('/')
+  await page.getByRole('button',{name:/6 Akhlak/}).click()
+  await expect(page.getByText('Memulai dengan Bismillah',{exact:true})).toBeVisible()
+  for (const [id,title] of [['rukun-iman','Rukun iman'],['rukun-islam','Rukun Islam']]) {
+    await page.goto('/#lesson/'+id)
+    await expect(page.getByRole('heading',{name:title,exact:true})).toBeVisible()
+    await page.getByRole('button',{name:'Saya sudah membaca'}).click()
+    await page.getByRole('button',{name:'Ke latihan pemahaman'}).click()
+    await expect(page.locator('#quiz-lesson')).toHaveValue(id)
+    await page.getByRole('button',{name:'Mulai latihan'}).click()
+    for(let i=0;i<3;i++){
+      await page.locator('.quiz-option').first().click()
+      await page.getByRole('button',{name:i===2?'Selesaikan latihan':'Soal berikutnya'}).click()
+    }
+    await expect(page.getByText(/Pelajaran ini sudah tercatat selesai/)).toBeVisible()
+  }
 })

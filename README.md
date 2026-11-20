@@ -2,6 +2,8 @@
 
 Aplikasi pribadi untuk pemula. Vue 3, Vite, TypeScript, Pinia, Tailwind, Dexie; tanpa backend. Seluruh data pribadi tersimpan di IndexedDB pada browser dan asal situs yang digunakan.
 
+[Panduan pengguna](docs/PANDUAN.md) · [Push GitHub dan deploy Cloudflare](docs/PENERBITAN.md) · [Audit](docs/AUDIT.md) · [Panduan editor materi](content/README.md)
+
 ## Menjalankan
 
 ```sh
@@ -40,7 +42,7 @@ Buka alamat yang dicetak Vite. Untuk PWA gunakan build produksi di HTTPS atau lo
 
 ## Perilaku data dan progres
 
-Cincin keseluruhan memakai 18 topik rencana, bukan hanya dua template yang tersedia. Tiap tahap memiliki tiga topik. Topik tanpa konten tidak diberi progres palsu. Dua template dapat diselesaikan; perluasan materi selanjutnya akan mengisi ID rencana yang sudah tersedia. Pelajaran dihitung selesai setelah sudah dibaca DAN seluruh kuisnya dijawab, berapa pun skornya. Nilai terbaik disimpan; jawaban salah diulang di sesi berikutnya. Pengguna boleh melompat urutan materi tersedia.
+Cincin keseluruhan memakai 18 topik rencana, termasuk empat pelajaran yang tersedia. Tiap tahap memiliki tiga topik. Topik tanpa konten tidak diberi progres palsu. Empat pelajaran dapat diselesaikan; perluasan materi selanjutnya akan mengisi ID rencana yang sudah tersedia. Pelajaran dihitung selesai setelah sudah dibaca DAN seluruh kuisnya dijawab, berapa pun skornya. Nilai terbaik disimpan; jawaban salah diulang di sesi berikutnya. Pengguna boleh melompat urutan materi tersedia.
 
 State disimpan sebagai snapshot tervalidasi dalam satu transaksi Dexie. Penulisan berurutan mencegah snapshot lama menyusul snapshot baru. Impor memvalidasi versi, batas ukuran, tanggal, nilai, duplikasi, serta hubungan ID; pratinjau jumlah data ditampilkan sebelum penggantian. Penggantian ditulis dahulu secara atomik; kegagalan menulis tidak mengganti snapshot lama. Ekspor memuat data pribadi, tanpa konten pelajaran. Versi format cadangan saat ini adalah 1.
 
@@ -48,14 +50,14 @@ Data lokal terkait profil browser dan alamat situs. Gunakan satu tab aktif untuk
 
 ## PWA dan aksesibilitas
 
-Build produksi menghasilkan manifest, ikon 192/512, dan service worker. Sajikan `dist/` menggunakan HTTPS (localhost diperbolehkan). Setelah pemuatan pertama dan service worker aktif, shell aplikasi, font, dua pelajaran, dan audio basmalah tersedia offline. Status “Siap offline” menandai kesiapan service worker. Tautan referensi memerlukan internet. Update ditawarkan melalui tombol; halaman tidak dipaksa memuat ulang saat menulis catatan. Pencatatan shalat bawaan nonaktif dan tidak memengaruhi progres/streak.
+Build produksi menghasilkan manifest, ikon 192/512, dan service worker. Sajikan `dist/` menggunakan HTTPS (localhost diperbolehkan). Setelah pemuatan pertama dan service worker aktif, shell aplikasi, font, empat pelajaran, dan audio basmalah tersedia offline. Status “Siap offline” menandai kesiapan service worker. Tautan referensi memerlukan internet. Update ditawarkan melalui tombol; halaman tidak dipaksa memuat ulang saat menulis catatan. Pencatatan shalat bawaan nonaktif dan tidak memengaruhi progres/streak.
 
 UI berbahasa Indonesia, teks Arab diberi `lang="ar"` dan RTL, fokus keyboard terlihat, drawer menahan fokus dan mendukung Escape, serta gerak berkurang mengikuti pengaturan perangkat. Audit axe otomatis membantu memeriksa WCAG A/AA; pemeriksaan pembaca layar dan pemasangan pada perangkat fisik tetap dapat dilakukan secara manual.
 
 ## Batas konten saat ini
 
-Hanya Syahadat dan Bismillah yang lengkap sebagai template. Kedua contoh beserta Arab/transliterasinya berstatus **perlu ditinjau guru**, dan audio baru tersedia untuk basmalah. Aplikasi tidak mengeluarkan fatwa. Mengumpulkan sumber bukan pengganti tinjauan guru. Materi lain sengaja belum diisi agar tidak menampilkan isi agama yang direka.
+Syahadat, Rukun Iman, Rukun Islam, dan Bismillah tersedia lengkap. Seluruh materi beserta Arab/transliterasinya berstatus **perlu ditinjau guru**, dan audio baru tersedia untuk basmalah. Aplikasi tidak mengeluarkan fatwa. Mengumpulkan sumber bukan pengganti tinjauan guru. Materi lain sengaja belum diisi agar tidak menampilkan isi agama yang direka.
 
-## Hasil verifikasi implementasi
+## Hasil verifikasi versi awal (sebelum modul latihan ingatan)
 
 22 unit test lulus, build TypeScript/Vite/PWA lulus, dan 4 pengujian browser Chromium lulus. Audit axe pada delapan halaman tidak menemukan pelanggaran WCAG A/AA yang dicakup pemeriksaan otomatis, termasuk kontras teks. Skenario offline menguji muat ulang, pelajaran, pemutaran/jeda MP3, serta penyimpanan jadwal hafalan tanpa jaringan. Pemasangan di perangkat fisik dan tinjauan keagamaan oleh guru belum dilakukan.

@@ -4,8 +4,8 @@ import { describe, expect, it } from 'vitest'
 import { lessons, loadLessons, parseLesson } from '../src/data/content'
 import sample from '../content/lessons/syahadat.json'
 describe('pemuat konten', () => {
-  it('memuat dua template lengkap dengan rujukan dan kuis', () => {
-    expect(lessons).toHaveLength(2)
+  it('memuat pelajaran lengkap dengan rujukan dan kuis', () => {
+    expect(lessons).toHaveLength(4)
     for (const lesson of lessons) {
       expect(lesson.body.length).toBeGreaterThan(100)
       expect(lesson.sumber.length).toBeGreaterThan(0)

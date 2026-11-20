@@ -1,0 +1,75 @@
+{
+  "id": "rukun-islam",
+  "title": "Rukun Islam",
+  "stageId": 1,
+  "minutes": 5,
+  "summary": "Kesaksian tentang Allah dan kerasulan Muhammad merupakan salah satu dasar Islam.",
+  "review": {
+    "status": "perlu-ditinjau"
+  },
+  "sumber": [
+    {
+      "id": "bukhari-8",
+      "title": "Sahih al-Bukhari no. 8, Kitab Iman",
+      "url": "https://sunnah.com/bukhari:8",
+      "narrator": "Abdullah bin Umar; diriwayatkan oleh Imam al-Bukhari.",
+      "note": "Dasar dua kesaksian dan lima rukun Islam. Penjelasan aplikasi adalah ringkasan pembelajaran."
+    }
+  ],
+  "terms": [
+    {
+      "id": "rukun-islam",
+      "arabic": "شَهَادَة",
+      "transliteration": "Syahādah",
+      "meaning": "Kesaksian tentang Allah dan kerasulan Muhammad merupakan salah satu dasar Islam.",
+      "sourceIds": [
+        "bukhari-8"
+      ]
+    }
+  ],
+  "readingIds": [],
+  "quiz": [
+    {
+      "id": "rukun-islam-1",
+      "prompt": "Dasar Islam yang berupa dua kesaksian disebut apa?",
+      "options": [
+        "Haji",
+        "Syahadat",
+        "Zakat"
+      ],
+      "answer": 1,
+      "explanation": "Hadis Ibn Umar menyebut kesaksian tentang Allah dan kerasulan Muhammad.",
+      "sourceIds": [
+        "bukhari-8"
+      ]
+    },
+    {
+      "id": "rukun-islam-2",
+      "prompt": "Pada bulan apa puasa yang disebut dalam hadis ini?",
+      "options": [
+        "Ramadan",
+        "Syawal",
+        "Muharam"
+      ],
+      "answer": 0,
+      "explanation": "Riwayat al-Bukhari no. 8 menyebut puasa Ramadan.",
+      "sourceIds": [
+        "bukhari-8"
+      ]
+    },
+    {
+      "id": "rukun-islam-3",
+      "prompt": "Pasangan mana yang disebut dalam lima dasar Islam?",
+      "options": [
+        "Sahur dan berbuka",
+        "Tidur dan bangun",
+        "Shalat dan zakat"
+      ],
+      "answer": 2,
+      "explanation": "Mendirikan shalat dan menunaikan zakat termasuk lima dasar dalam hadis tersebut.",
+      "sourceIds": [
+        "bukhari-8"
+      ]
+    }
+  ]
+}

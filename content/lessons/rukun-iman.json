@@ -1,0 +1,75 @@
+{
+  "id": "rukun-iman",
+  "title": "Rukun iman",
+  "stageId": 1,
+  "minutes": 5,
+  "summary": "Iman berarti keyakinan. Hadis Jibril menjelaskan enam perkara yang diimani.",
+  "review": {
+    "status": "perlu-ditinjau"
+  },
+  "sumber": [
+    {
+      "id": "muslim-8a",
+      "title": "Sahih Muslim no. 8a, hadis Jibril",
+      "url": "https://sunnah.com/muslim:8a",
+      "narrator": "Umar bin al-Khattab, melalui Abdullah bin Umar; diriwayatkan oleh Imam Muslim.",
+      "note": "Penjelasan Islam, iman, dan ihsan. Lafal Arab dalam aplikasi adalah bentuk pembelajaran dan perlu diperiksa guru."
+    }
+  ],
+  "terms": [
+    {
+      "id": "rukun-iman",
+      "arabic": "إِيمَان",
+      "transliteration": "Īmān",
+      "meaning": "Iman berarti keyakinan. Hadis Jibril menjelaskan enam perkara yang diimani.",
+      "sourceIds": [
+        "muslim-8a"
+      ]
+    }
+  ],
+  "readingIds": [],
+  "quiz": [
+    {
+      "id": "rukun-iman-1",
+      "prompt": "Berapa perkara iman yang disebut dalam hadis Jibril?",
+      "options": [
+        "Lima",
+        "Enam",
+        "Tiga"
+      ],
+      "answer": 1,
+      "explanation": "Hadis Jibril menyebut enam perkara iman.",
+      "sourceIds": [
+        "muslim-8a"
+      ]
+    },
+    {
+      "id": "rukun-iman-2",
+      "prompt": "Manakah yang disebut dalam penjelasan iman?",
+      "options": [
+        "Hari akhir",
+        "Jumlah rakaat",
+        "Waktu sahur"
+      ],
+      "answer": 0,
+      "explanation": "Iman kepada hari akhir disebut bersama iman kepada Allah, malaikat, kitab, rasul dan takdir.",
+      "sourceIds": [
+        "muslim-8a"
+      ]
+    },
+    {
+      "id": "rukun-iman-3",
+      "prompt": "Apa yang disebut hadis ini berkaitan dengan takdir?",
+      "options": [
+        "Hanya yang baik",
+        "Hanya yang buruk",
+        "Yang baik dan yang buruk"
+      ],
+      "answer": 2,
+      "explanation": "Dalam Sahih Muslim 8a, takdir disebut mencakup yang baik dan yang buruk.",
+      "sourceIds": [
+        "muslim-8a"
+      ]
+    }
+  ]
+}
